@@ -1,0 +1,20 @@
+id = NAME_MENU;
+type = dropdown;
+items = [
+        {
+                label = "LINK DESCRIPTION 1";
+                action = "URL_1";
+        },
+        {
+                label = "LINK DESCRIPTION 2";
+                action = "URL_2";
+                submenu = {
+                        items = [
+                                {
+                                        label = "SUBITEM LINK DESCRIPTION";
+                                        action = "URL_3";
+                                }
+                        ];
+                };
+        }
+];

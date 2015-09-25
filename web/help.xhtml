@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html 
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html">
+  <ui:composition template="utils/templateLogged.xhtml">
+      <ui:define name="contentLogged">
+          <div class="content-pad">
+              
+          <h1><h:outputText value="#{helpMsg.help_title}" /></h1>
+          <h:outputText value="#{helpMsg.help_content}" escape="false" />
+          <p><h:outputText value="#{helpMsg.help_message}" /></p>
+          
+          <a name="top"></a>
+          <ul>
+              <li><a href="#navigation"><h:outputText value="#{helpMsg.help_navigation_title}" /></a></li>
+              <li><a href="#assistive"><h:outputText value="#{helpMsg.help_assistive_title}" /></a></li>
+              <li>
+                  <a href="#language-amenu"><h:outputText value="#{helpMsg.help_amenu_title}" /></a>
+                  <ul>
+                      <li><a href="#create-new-menu"><h:outputText value="#{helpMsg.help_create_menu_title}" /></a></li>
+                      <li><a href="#example-menu"><h:outputText value="#{helpMsg.help_example_menu_title}" /></a></li>
+                  </ul>
+              </li>
+              <li><a href="#textual"><h:outputText value="#{helpMsg.help_textual_title}" /></a></li>
+              <li><a href="#graphical"><h:outputText value="#{helpMsg.help_graphical_title}" /></a></li>
+          </ul>
+          
+          <h2><a name="navigation"></a><h:outputText value="#{helpMsg.help_navigation_title}" /></h2>
+          <a href="#top"><h:outputText value="#{helpMsg.toTop}"/></a>
+          
+          <h2><a name="assistive"></a><h:outputText value="#{helpMsg.help_assistive_title}" /></h2>
+          <a href="#top"><h:outputText value="#{helpMsg.toTop}"/></a>
+
+          <!--
+          <h2><a name="mainpage"></a><h:outputText value="#{helpMsg.help_main_page_title}" /></h2>
+          <a href="#top"><h:outputText value="#{helpMsg.toTop}"/></a>
+          -->
+          
+          <h2><a name="language-amenu"></a><h:outputText value="#{helpMsg.help_amenu_title}" /></h2>
+          <h:outputText value="#{helpMsg.help_amenu_content}" escape="false" />
+          <p style="text-align: center">
+              <img src="img/modelo-conceitual.png" alt="Modelo conceitual da linguagem AMenu" style="max-width:50em" />
+          </p>
+          <a href="#top"><h:outputText value="#{helpMsg.toTop}"/></a>
+          
+          <h3><a name="create-new-menu"></a><h:outputText value="#{helpMsg.help_create_menu_title}" /></h3>
+          <h:outputText value="#{helpMsg.help_create_menu_content}" escape="false" />
+          
+          <h4 style="text-height: bold;font-style: italic;"><h:outputText value="#{helpMsg.help_features_menu_title}" /></h4>
+          <h:outputText value="#{helpMsg.help_features_menu_content}" escape="false" />
+          <h4 style="text-height: bold;font-style: italic;"><h:outputText value="#{helpMsg.help_features_config_title}" /></h4>
+          <h:outputText value="#{helpMsg.help_features_config_content}" escape="false" />
+          <h4 style="text-height: bold;font-style: italic;"><h:outputText value="#{helpMsg.help_features_items_title}" /></h4>
+          <h:outputText value="#{helpMsg.help_features_items_content}" escape="false" />
+          <h4 style="text-height: bold;font-style: italic;"><h:outputText value="#{helpMsg.help_features_submenu_title}" /></h4>
+          <h:outputText value="#{helpMsg.help_features_submenu_content}" escape="false" />
+          <h4 style="text-height: bold;font-style: italic;"><h:outputText value="#{helpMsg.help_features_icon_title}" /></h4>
+          <h:outputText value="#{helpMsg.help_features_icon_content}" escape="false" />
+          <a href="#top"><h:outputText value="#{helpMsg.toTop}"/></a>
+          
+          <h3><a name="example-menu"></a><h:outputText value="#{helpMsg.help_example_menu_title}" /></h3>
+          <pre class="prettyprint linenums lang-js">
+id = NAME_MENU;
+type = dropdown;
+items = [
+    {
+        label = "LINK DESCRIPTION 1";
+        action = "URL_1";
+    },
+    {
+        label = "LINK DESCRIPTION 2";
+        action = "URL_2";
+        submenu = {
+            items = [
+                {
+                    label = "SUBITEM LINK DESCRIPTION";
+                    action = "URL_3";
+                }
+            ];
+        };
+    }
+];</pre>
+          <a href="#top"><h:outputText value="#{helpMsg.toTop}"/></a>
+          
+          <h2><a name="textual"></a><h:outputText value="#{helpMsg.help_textual_title}" /></h2>
+          <h:outputText value="#{helpMsg.help_textual_content}" escape="false" />
+          <a href="#top"><h:outputText value="#{helpMsg.toTop}"/></a>
+          
+          <h2><a name="graphical"></a><h:outputText value="#{helpMsg.help_graphical_title}" /></h2>
+          <h:outputText value="#{helpMsg.help_graphical_content}" escape="false" />
+          <a href="#top"><h:outputText value="#{helpMsg.toTop}"/></a>
+          
+          </div>
+          <script type="text/javascript">
+                // initialise plugins
+                $(document).ready(function(){ 
+                    $(".prettyprint").text(function(index, text) {
+                        return text.replace(/\t/g, '    ');
+                    });
+                    prettyPrint();
+                });
+            </script>
+      </ui:define>
+      
+  </ui:composition>
+</html>
